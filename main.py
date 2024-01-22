@@ -1,6 +1,11 @@
 #import tool webdriver via selenium
 from selenium import webdriver
 
+#jika menggunakan local IDE
+#from selenium.webdriver.chrome.service import Service
+#membuat variabel untuk path cromedriver
+#service = Service('c:\\Users\\syarifudin\\Downloads\\jupyternotebook\\chromedriver-win64\\chromedriver.exe')
+
 #membuat fungsi untuk membuat driver 
 def get_drvier():
   #mengatur options agar browser mudah dijalankan
