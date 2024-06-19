@@ -6,11 +6,12 @@ from selenium import webdriver
 #membuat variabel untuk path cromedriver
 #service = Service('c:\\Users\\syarifudin\\Downloads\\jupyternotebook\\chromedriver-win64\\chromedriver.exe')
 
-#membuat fungsi untuk membuat driver 
+
+#membuat fungsi untuk membuat driver
 def get_drvier():
   #mengatur options agar browser mudah dijalankan
-  
-  #membuat kelas kosong 
+
+  #membuat kelas kosong
   options = webdriver.ChromeOptions()
   #menonaktifkan pop-up infobars agar tidak mengganggu script saat menjalankan browser
   options.add_argument("disable-infobars")
@@ -26,15 +27,19 @@ def get_drvier():
 
   #membuat variable driver dengan menggunakan chrome class dari webdriver
   driver = webdriver.Chrome(options=options)
-  #membuat koneksi ke halaman web yang akan di scraping 
+  #membuat koneksi ke halaman web yang akan di scraping
   driver.get("https://muamalahemas.com/")
   return driver
+
 
 def main():
   #memanggil fungsi get_drvier untuk menjalankan driver
   driver = get_drvier()
   #membuat variabel untuk menyimpan data (xpath) dari halaman web
-  element = driver.find_element(by="xpath", value="/html/body/div[1]/div/div/section[2]/div/div[2]/div/div/div/div[1]")
+  element = driver.find_element(
+      by="xpath", value="/html/body/div[1]/div[3]/div/div[3]/div[2]/div[2]")
   return element.text
-#cetak hasil dari fungsi main 
+
+
+#cetak hasil dari fungsi main
 print(main())
